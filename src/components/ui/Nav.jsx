@@ -3,9 +3,26 @@ import NavMenu from "./NavMenu";
 
 export default function Nav() {
   return (
-    <div className="navbar max-w-360 mx-auto p-5 ">
+    <div className="navbar max-w-360 mx-auto p-5 bg-warning ">
       <div className="navbar-start w-full">
-        <div className="dropdown">
+        <Link to="/">
+          <img
+            className="max-w-15"
+            src="/assets/images/logo-white.svg"
+            alt="logo"
+          />
+        </Link>
+      </div>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
+          <NavMenu />
+        </ul>
+      </div>
+      <div className="navbar-end w-auto">
+        <Link className="ml-5">
+          <button className="btn btn-success btn-outline "> Account</button>
+        </Link>
+        <div className="dropdown dropdown-bottom dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -29,17 +46,6 @@ export default function Nav() {
             <NavMenu />
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <NavMenu />
-        </ul>
-      </div>
-      <div className="navbar-end w-auto">
-        <Link>
-          <button className="btn btn-success btn-outline ml-5"> Account</button>
-        </Link>
       </div>
     </div>
   );
